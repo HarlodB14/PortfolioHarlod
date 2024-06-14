@@ -1,6 +1,5 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model PortfolioHarlod.Viewmodels.BlogItemListViewmodel
+
 <div class="container">
     <div class="mt-1">
         <h1 class="display-1 text-center">
@@ -10,9 +9,72 @@
             And welcome to my amazing portfolio :)
         </p>
     </div>
-    <div class="mt-2 text-center">
-        <img src="Images/Persona_image.jpg" class="img-fluid w-50 h-50" alt="Responsive image">
+    <!-- linkerhelft-->
+    <div class="row mt-4">
+        <div class="col-md-3 mb-4">
+            <div class="card">
+                <div class="card-header alert alert-success">
+                    Personal Interests
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Working out</li>
+                        <li>Basketball</li>
+                        <li>Music</li>
+                        <li>Reading</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Foto -->
+        <div class="col-md-6 text-center mb-4">
+            <img src="Images/Persona_image.jpg" class="img-fluid w-100 h-auto rounded" alt="Responsive image">
+        </div>
+        <!-- Rechterhelft-->
+        <div class="col-md-3 mb-4">
+            <div class="card">
+                <div class="card-header alert-success">
+                    Professional Skills
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>C#</li>
+                        <li>PHP</li>
+                        <li>SQL</li>
+                        <li>Jira & Trello</li>
+                        <li>Git & GitHub</li>
+                        <li>Agile Methodologies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="mt-1">
+    <!-- Centered text -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <p class="text-center">
+                Featured projects I have worked on.
+            </p>
+        </div>
+    </div>
+    <!-- Projects row -->
+    <div class="row">
+        @foreach (var blogItem in Model.blogItems)
+        {
+            <div class="col-md-3 mb-4">
+                <a href="@blogItem.Url" class="text-decoration-none" style="color: inherit;">
+                    <div class="card h-100">
+                        <img src="@blogItem.imageUrl" class="card-img-top" alt="@blogItem.title">
+                        <div class="card-body">
+                            <h5 class="card-title">@blogItem.title</h5>
+                            <p class="card-text">@blogItem.creationDate.ToString("MMMM dd, yyyy")</p>
+                            <p class="card-text">@blogItem.description</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
     </div>
 </div>
