@@ -1,7 +1,26 @@
 ﻿
-@{
-    ViewData["Title"] = "Projects";
-}
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
 
-<h1>Projects</h1>
-
+<div class="container">
+    <h1 class="display-1 mt-5 mb-4">Projects</h1>
+    <p class="p-2">All the school projects I have worked on since my 1st year in computer science (2021)</p>
+    <div class="row">
+        @foreach (var blogItem in Model.blogItems)
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <img src="@Url.Content(blogItem.imageUrl)" class="card-img-top" alt="@blogItem.title">
+                    <div class="card-body">
+                        <h2 class="card-title">@blogItem.title</h2>
+                        <p class="card-text">@blogItem.creationDate.ToString("dd MMMM, yyyy")</p>
+                        <p class="card-text">@blogItem.description</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
