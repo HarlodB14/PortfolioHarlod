@@ -1,5 +1,4 @@
-﻿
-<head>
+﻿<head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -16,6 +15,12 @@
                     <img src="@Url.Content(blogItem.imageUrl)" class="card-img-top" alt="@blogItem.title">
                     <div class="card-body">
                         <h2 class="card-title">@blogItem.title</h2>
+                        <div class="tech-stack-icons">
+                            @foreach (var icon in blogItem.techStackIcon)
+                            {
+                                <img src="@Url.Content(icon)" class="tech-stack-icon" alt="@icon" style="width: 30px; height: 30px; margin-right: 5px;">
+                            }
+                        </div>
                         <p class="card-text">@blogItem.creationDate.ToString("dd MMMM, yyyy")</p>
                         <p class="card-text">@blogItem.description</p>
                     </div>

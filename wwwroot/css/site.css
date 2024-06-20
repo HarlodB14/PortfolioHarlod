@@ -3,6 +3,12 @@ html {
     font-size: 14px;
 }
 
+/* Margin bottom and background color for body */
+body {
+    margin-bottom: 60px;
+    background-color: #caf0f8;
+}
+
 /* Adjust font size on larger screens */
 @media (min-width: 768px) {
     html {
@@ -24,12 +30,6 @@ html, body, h1, h2, h3, h4, h5, h6, p, .card-title, .card-text {
 html {
     position: relative;
     min-height: 100%;
-}
-
-/* Margin bottom and background color for body */
-body {
-    margin-bottom: 60px;
-    background-color: #fff1e6;
 }
 
 ul, li {
@@ -59,3 +59,11 @@ img, svg {
             width: 50px; /* Adjust icon size */
             height: 50px;
         }
+
+.card-body {
+    background-color: #fff;
+}
+
+.footer .far {
+    font-size: 1.5rem; /* Adjust the size as per your preference */
+}

@@ -6,6 +6,7 @@
         public string description { get; set; }
         public string imageUrl { get; set; }
         public string Url { get; set; }
+        public List<string> techStackIcon { get; set; }
         public DateTime creationDate { get; set; }
         public DateTime updatedDate { get; set; }
     }
